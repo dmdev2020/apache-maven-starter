@@ -7,7 +7,7 @@
   <groupId>com.dmdev</groupId>
   <artifactId>first-maven</artifactId>
   <version>1.0.0-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <packaging>war</packaging>
 
   <name>first-maven</name>
 
@@ -56,6 +56,7 @@
   </dependencies>
 
   <build>
+    <finalName>ROOT</finalName>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
