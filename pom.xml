@@ -60,6 +60,28 @@
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.2.0</version>
+        <executions>
+          <execution>
+            <id>copy-docker-files</id>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <phase>validate</phase>
+            <configuration>
+              <outputDirectory>${project.basedir}/target</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${project.basedir}/docker</directory>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.8.1</version>
         <configuration>
@@ -71,12 +93,6 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>2.22.2</version>
-        <configuration>
-<!--          <includes>-->
-<!--            <include></include>-->
-<!--          </includes>-->
-<!--          <skip>true</skip>-->
-        </configuration>
       </plugin>
     </plugins>
   </build>
