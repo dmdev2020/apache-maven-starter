@@ -115,4 +115,17 @@
     </plugins>
   </build>
 
+<!--  M2_HOME/conf-->
+<!--  ~/.m2/settings.xml-->
+  <distributionManagement>
+    <snapshotRepository>
+      <id>nexus</id>
+      <url>http://localhost:9000/repository/maven-snapshots/</url>
+    </snapshotRepository>
+    <repository>
+      <id>nexus</id>
+      <url>http://localhost:9000/repository/maven-releases/</url>
+    </repository>
+  </distributionManagement>
+
 </project>
