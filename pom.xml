@@ -23,6 +23,7 @@
 <!--  env.-->
 <!--  System.getProperty  -D-->
   <properties>
+    <app.env>dev</app.env>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>15</maven.compiler.source>
     <maven.compiler.target>15</maven.compiler.target>
@@ -165,6 +166,43 @@
       </plugins>
     </pluginManagement>
   </build>
+
+  <profiles>
+    <profile>
+      <id>prod</id>
+      <activation>
+<!--        <os>-->
+<!--          <family>windows</family>-->
+<!--        </os>-->
+        <jdk>15</jdk>
+<!--        <file>-->
+<!--          <missing>${basedir}/pom.xml</missing>-->
+<!--        </file>-->
+<!--        <property>-->
+<!--          <name>test.prop</name>-->
+<!--          <value>example1</value>-->
+<!--        </property>-->
+<!--        <activeByDefault>true</activeByDefault>-->
+      </activation>
+      <properties>
+        <app.env>prod</app.env>
+        <example>test-test</example>
+      </properties>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.8.1</version>
+            <configuration>
+              <debug>false</debug>
+              <optimize>true</optimize>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 
 <!--  M2_HOME/conf-->
 <!--  ~/.m2/settings.xml-->
