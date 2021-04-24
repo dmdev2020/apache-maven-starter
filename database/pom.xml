@@ -9,5 +9,25 @@
 
     <artifactId>database</artifactId>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.dmdev</groupId>
+                <artifactId>hello-plugin</artifactId>
+                <version>1.0.1-SNAPSHOT</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>hello</goal>
+                        </goals>
+                        <phase>validate</phase>
+                    </execution>
+                </executions>
+<!--                <configuration>-->
+<!--                    <message>Message from config!!!</message>-->
+<!--                </configuration>-->
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
